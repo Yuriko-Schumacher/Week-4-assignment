@@ -1,4 +1,4 @@
-const margins = { t: 50, r: 50, b: 50, l: 50 };
+const margins = { t: 50, r: 50, b: 100, l: 50 };
 const size = { w: window.innerWidth, h: window.innerHeight * 0.6 };
 const svg = d3.select("svg#bar-chart");
 const containerG = svg.append("g");
