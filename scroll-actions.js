@@ -23,11 +23,9 @@ function ScrollActions() {
 
 		let elements = document.getElementsByClassName("annotation");
 		elements = Array.from(elements);
-		console.log(elements);
 
 		elements.forEach((el, i) => {
 			let elId = el.getAttribute("id");
-			console.log(elId);
 
 			gsap.to(`#${elId}`, {
 				scrollTrigger: {

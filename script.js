@@ -20,7 +20,6 @@ d3.csv("data/covid_data.csv").then(function (data) {
 	let states = new Set(data.map((d) => d.state));
 	states = Array.from(states);
 	states = states.sort();
-	console.log(states);
 
 	// BAR CHART
 	let barChart = new BarChart();
@@ -34,10 +33,7 @@ d3.csv("data/covid_data.csv").then(function (data) {
 		.dispatch(dispatch)
 		.draw();
 
-	console.log(barChart);
-
 	// ANNOTATIONS
 	let scrollActions = new ScrollActions();
 	scrollActions.dispatch(dispatch).addScrollTriggers();
-	console.log(scrollActions);
 });

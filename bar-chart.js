@@ -50,7 +50,11 @@ function BarChart() {
 	};
 
 	this.draw = function () {
-		let filteredData = this._data.filter((d) => d.state === this._setState);
+		let filteredData = this._data
+			.filter((d) => d.state === this._setState)
+			.sort(function (a, b) {
+				return b.deaths - a.deaths;
+			});
 
 		let xScale = d3
 			.scaleBand()
@@ -138,7 +142,6 @@ function BarChart() {
 			this._dispatch = dispatch;
 
 			this._dispatch.on("changeState", (state) => {
-				console.log(state);
 				this.setState(state).draw();
 			});
 
